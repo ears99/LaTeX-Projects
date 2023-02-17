@@ -1,0 +1,385 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{graphicx}
+
+\title{Algebra Notes}
+\author{Jacob Seadorf}
+\graphicspath{{./images/}}
+
+\begin{document}
+	\maketitle
+\section{Polynomials \& FOIL}
+\textbf{FOIL}: An acronym for steps on how to solve a polynomial: First, Outer, Inner, Last
+\subsection{Examples}
+\subsubsection{Example 1}
+$$
+(x+2)(3x+5)
+$$
+Multiply the first terms (x and 3x), the outer terms (x and 5), the inner terms (2 and 3x), and the last terms (2 and 5).
+$$
+3x^2 + 5x + 6x + 10
+$$
+Combine like terms
+$$
+3x^2 + 11x + 10
+$$
+
+\subsubsection{Example 2}
+$$(2x - 7)(3x + 1)$$
+$$6x^2 + 2x - 21x - 7$$
+$$6x^2 - 19x - 7$$
+
+\section{Exponent Rules}
+\textbf{Note}: All denominators $\ne 0$
+\subsection{Product} 
+	$$
+	x^r \times x^s = x^r^+^s
+	$$
+\subsection{Quotient}
+	$$
+	\frac{x^r}{x^s} = x^r^-^s
+	$$
+\subsection{Power of a Power}
+	$$
+	(x^r)^s = x^r^s
+	$$
+\subsection{Power of a Product}
+	$$
+	(x \times y)^r = x^r \times y^r
+	$$
+\subsection{Power of a Quotient}
+	$$
+	\left(\frac{x}{y}\right)^r = \frac{x^r}{y^r}	
+	$$
+\subsection{Negative Exponent}
+	$$
+	x^-r = \frac{1}{x^r}
+	$$
+\subsection{Zero Exponent}
+	if x \ne 0
+
+	$$x^0 = 1$$
+
+\subsection{Negative Exponent with Quotient}
+	$$
+	\left( \frac{x}{y}\right)^-^r = \left(\frac{x}{y}\right)^r
+	$$
+
+\subsection{Fractional}
+	$$
+	a^\frac{1}{n} = \sqrt[n]{a}	
+	$$
+
+\section{Factoring \& GCF}
+\noindent \textbf{Greatest Common Factor}: The largest number that's common to two or more factors.
+\subsection{Examples}
+\subsubsection{Example 1}
+$$4x^2 - 12x$$
+The GCF is 4x
+$$4x(x-3)$$
+
+\subsubsection{Example 2}
+$$x^2 + 7x + 12$$
+Take out the $x$ from the expression.
+$$(x)(x)$$
+Find two numbers that \textit{multiply} to get 12, and \textit{add} to get 7.
+$$4, 3$$
+Add them to the factored form of the expression.
+$$(x + 4)(x + 3)$$
+Use FOIL to check your answer.
+
+\subsubsection{Example 3}
+$$x^2 + 2x - 15$$
+$$(x+5)(x-3)$$
+
+\section{Finding Slope \& Other Line Equations}
+\subsection{Finding Slope from a Graph}
+
+\begin{center} \begin{tikzpicture}
+	\begin{axis}[xmin=-10,xmax=10,ymin=-10,ymax=10,axis x line=middle, axis y line=middle];
+	\addplot[domain=-10:10]{x+2};	
+	\end{axis}
+\end{tikzpicture} \end{center}
+
+$$slope = \frac{rise}{run} = \frac{y_2 - y_1}{x_2 - x_1}$$
+
+Choose any two points on the line, $(x_1, y_1)$, $(x_2, y_2)$, and plug them into the equation shown above.
+
+For example, let's choose $(0,2)$ and $(2,4)$.
+$$ m = \frac{4 - 2}{2 - 0}$$
+Doing the math, you'll see that the slope is $\frac{2}{2}$ or, simplifying the fraction, 1.
+
+\subsection{Finding slope from slope-intercept form}
+	$$y = \underline{m}x+b$$
+\subsection{Examples}
+\subsubsection{Example 1}
+$$y = 9x - 4$$
+9 is the slope, -4 is the y-intercept
+
+\section{Squaring Binomials}
+
+$$(a \pm b)^2 \Rightarrow a^2 \pm 2ab + b^2$$  
+OR
+$$(a \pm b)^2 \Rightarrow (a \pm b)(a \pm b)$$
+
+\subsection{Examples}
+\subsubsection{Example 1}
+
+$$(2x + 5)^2$$
+$$(2x)^2 + 2(2x)(5) + (5)^2$$
+$$4x^2 + 20x + 25$$
+
+\subsubsection{Example 2}
+$$ (3y^2 - 7w)^2 $$
+$$ (3y^2)^2 - 2(3y^2)(7w) + (7w)^2$$
+$$ 9y^4 - 42wy^2 + 49w^2 $$ 
+
+\section{Sets, Set Notation, \& Interval Notation}
+\noindent \textbf{Set}: A collection of objects (called ``elements'', ``members'', or ``points'').
+
+The Empty Set (the set with nothing in it) is denoted with \emptyset. 
+\subsection{Set Builder Notation}
+The set of all elements $x$ satisfying property $P$ is denoted as $\{x | P(x)\}$.
+
+$|$ means ``such that'' \\ 
+$\in$ means ``is a member of''\\
+$\notin$ means ``not a member of''\\
+There are no repeated elements in a set. A collection of numbers 1,1,1,4,5 is denoted as $\{1,4,5\}$.
+\subsection{Interval Notation}
+A square bracket includes a number, a parentesis excludes a number.
+
+All real numbers $\geq$ 2 and $<$ 4 is denoted as $[2, 4)$.
+All real numbers $\geq$ 2 is denoted as $[2,\infty)$.
+
+\section{0, 1, or Infinite Solutions}
+
+\begin{itemize}
+\item An equation with no solution is false, and doesn't involve the variable.
+
+\item An equation with only one solution is true, and the variable equals the answer.
+
+\item An equation with infinite solutions is true, but doesn't involve the variable.
+\end{itemize}
+
+\subsection{Examples}
+\subsubsection{Example 1}
+$$ 2x - 3 = 2x - 1$$
+$$2x - 2x = -1 + 3$$
+$$0 = 2$$
+The answer doesn't make sense; no solution.
+\subsubsection{Example 2}
+$$2y - 4 = y - 2$$
+$$2y - y = -2 + 4$$
+$$y = 2$$
+This equation only has one solution; to check the answer, plug in the value for $y$.
+\subsubsection{Example 3}
+$$3w - 1 = 3w - 1$$
+$$3w - 3w = 1 - 1$$
+$$ 0 = 0$$
+Infinite solutions; for any value we plug into $w$, the answer will \textit{always} be true
+
+\section{Solving Systems of Linear Equations}
+There are several methods of solving systems of linear equations: 
+\begin{itemize}
+	\item Graphing
+	\item Substitution
+	\item Elimination
+\end{itemize}
+\subsection{Solve by Graphing}
+Consider the following system: 
+
+$$y = x + 3$$
+$$y = -x - 3$$
+To solve by graphing, all we would have to do is graph each line, and the solution is where the lines intersect (in this case, $(-3,0)$ -- check your work by plugging it back into the equation.
+\subsection{Solve by Substitution}
+To solve by substitution, you have to simplify one equation, and incorporate it into the other, which allows you to eliminate one of the variables.
+$$3x + y = 6$$
+$$x = 18 - 3y$$
+In this case, $x$ is already isolated in the second equation, so we can substitute $x$ in the first equation $(18-3y)$.
+\subsection{Solve by Elimination}
+To solve by elimination, write the equations next to each other so that you can compare the coefficients with each variable.
+$$x + y = 180$$
+$$3x + 2y = 414$$
+Multiply the first equation by $-3$...
+$$-3(x + y = 180) \Rightarrow -3x + -y = -540$$
+Why did we multiply by -3? Add the first equation to the second, and you get: 
+$$0 + -1y = -126$$
+Then it's as easy as solving for $y$.
+$$y = 126$$
+Now plug in $y$ to find $x$...
+$$x + y = 180$$
+$$x + 126 = 180$$
+$$x = 54$$
+
+\section{Factorization Formulas}
+\begin{itemize}
+	\item \textbf{Difference of Squares}: $a^2 - b^2 = (a + b)(a - b)$
+	\item \textbf{Perfect Square}: $a^2 \pm 2ab + b^2 = (a \pm b)^2$
+	\item \textbf{Difference/Sum of Cubes}: $a^3 \pm b^3 = (a \pm b)(a^2 \pm ab + b^2)$
+	\item \textbf{Perfect Cubes}: $a^3 \pm 3a^2b + 3ab^2 \pm b^3 = (a \pm b)^3$
+\end{itemize}
+
+\section{Parabolas}
+For the quadratic equation $ax^2 + bx + c = 0$:
+If $a > 0$, the parabola opens \textit{upward}.
+\noindent If $a < 0$ the parabola opens \textit{downward}.
+\noindent The vertex of a parabola is the highest or lowest point.
+
+
+\section{Complex Numbers}
+Normally, a square root of a negative number (for example, $\sqrt{-16}$) is undefined, but there's a way around this: a special type of number was invented by mathematicians to solve this problem, represented by the letter $i$.
+
+$$i = \sqrt{-1}$$
+
+\subsection{Examples}
+\subsubsection{Example 1}
+$$(-4 + 5i) - (-5 + 2i)$$
+$$-4 + 5i + 5 - 2i$$
+$$1 + 3i$$
+
+\section{Logarithims}
+\textbf{Euler's Number}: A constant represented by the letter $e$, equal to approximately 2.71... \\
+\textbf{Base}: The number written under the $\log$. If there's no number written under $\log$, the base is 10. \\
+
+\noindent We all know that operations in math have inverses; addition can be undone by subtraction, multiplication can be undone by division, but what about exponents? That's where logarithims come in. The basic rule for logarithims is: 
+
+\begin{center}
+	$$\log_a c = b$$ 
+	if and only if 
+	$$a^b = c$$
+\end{center}
+
+There's several forms of logarithim: 
+\begin{itemize}
+	\item Base-10 Logarithim, usually just written as $\log$.
+	\item Natural Logarithim, with base $e$, written as $\ln$.
+	\item Base-a Logarithim, with base $a$, written as $\log_a$.
+\end{itemize}
+
+A base-a logariathm of $x$ is the exponent to which $a$ must be raised to get $x$
+$$\log_a x = s$$
+
+\subsection{Examples}
+\subsubsection{Example 1}
+$$2^3 = 8 \Leftrightarrow \log_2 8 = 3$$
+
+\subsubsection{Example 2}
+$$5^2 = 25 \Leftrightarrow \log_5 25 = 2$$
+
+\subsubsection{Example 3}
+How many 5s need to be multiplied together to get 625?
+$$\log_5(625)$$
+$$5^4 = 625$$
+$$\log_5 625 = 4$$
+
+\section{Properties of Logarithims}
+\begin{itemize}
+	\item Logarithim of a Product: $\log_a(xy) = \log_a x + \log_a y$
+	\item Logarithim of a Power: $\log_a x^n = n \times \log_a x$
+	\item Change of Base Formula: $\log_a (x) = \frac{\log_c a}{\log_c x}$
+	\item Natural Logarithim: $\ln e = 1$
+\end{itemize}
+
+\section{Matricies \& Matrix Operations}
+\textbf{Matrix}: A rectangular array or table of numbers, symbols, or expressions.
+
+\begin{center}
+\begin{bmatrix}
+	1 & 9 & -13 \\ 
+	20 & 5 & -6
+\end{bmatrix}
+\end{center}
+
+\subsection{Matrix Operations}
+\subsubsection{Inverse}
+	The inverse of a matrix is just the opposite of a matrix. 
+	$$
+	-
+	\begin{bmatrix}
+		a & -b \\
+		c & d
+	\end{bmatrix}
+	=
+	\begin{bmatrix}
+		-a & b \\
+		-c & -d
+	\end{bmatrix}
+	$$
+\subsubsection{Addition/Subtraction}
+	For addition and subtraction, add/subtract in the matching positions.
+	$$
+	\begin{bmatrix}
+		\underline{a} & b \\ 
+		c & d 
+	\end{bmatrix}
+	\pm
+	\begin{bmatrix}
+		\underline{e} & f \\ 
+		g & h
+	\end{bmatrix}
+	$$
+\subsubsection{Scaler Multiplication}
+	For scaler multiplication, simply multiply each element by the scaler.
+	$$
+	a
+	\times
+	\begin{bmatrix}
+		b & c \\
+		d & e
+	\end{bmatrix}
+	= 
+	\begin{bmatrix}
+		ab & ac \\
+		ad & ae
+	\end{bmatrix}
+	$$
+
+\section{Matrix Multiplication}
+You multiply matricies by taking the dot product of each matrix. 
+$$
+\begin{bmatrix}
+	a & b & c \\
+	d & e & f
+\end{bmatrix}
+\times
+\begin{bmatrix}
+	g & j \\
+	h & k \\
+	i & l
+\end{bmatrix}
+= 
+\begin{bmatrix}
+ag & + & bh & + & ci \\
+aj & + & bk & + & cl \\
+da & + & eh & + & fi \\
+dj & + & ek & + & fl
+\end{bmatrix}
+$$
+It should be noted that matrices A and B are \textbf{not} commutative; 
+$$AB \ne BA$$
+
+\section{Sigma Notation}
+The greek letter $\Sigma$ has a special meaning in math equations: summation. 
+Suppose you wanted to add up a sequence of numbers, one after another. You \textit{could} write it out:
+$$1 + 2 + 3 + 4...$$
+
+But that would take a lot of time if you had a lot of numbers that needed adding! So mathematicians use the letter $\Sigma$ to represent this. 
+
+You sum whatever is after the $\Sigma$:
+$$\sum n$$
+
+But what \textit{values} of $n$?
+$$\sum_{i=1}^{4} n$$
+You start at the number at the bottom (1, in this case) and add up to the number at the top (4, in this case).
+
+But $\Sigma$ is a \textit{lot} more powerful than that!
+
+We can square $n$ each time and add the result: 
+$$\sum_{i=1}^{4} n^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30$$
+
+We can add up the first four terms of the expression $2n+1$:
+$$\sum_{i=1}^{4} (2n+1) = 3 + 5 + 7 + 9 = 24$$
+\end{document}
