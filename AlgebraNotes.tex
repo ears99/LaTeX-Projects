@@ -36,15 +36,15 @@ $$6x^2 - 19x - 7$$
 \textbf{Note}: All denominators $\ne 0$
 \subsection{Product} 
 	$$
-	x^r \times x^s = x^r^+^s
+	x^r \times x^s = x^{r+s}
 	$$
 \subsection{Quotient}
 	$$
-	\frac{x^r}{x^s} = x^r^-^s
+	\frac{x^r}{x^s} = x^{r-s}
 	$$
 \subsection{Power of a Power}
 	$$
-	(x^r)^s = x^r^s
+	(x^r)^s = x^{rs}
 	$$
 \subsection{Power of a Product}
 	$$
@@ -56,16 +56,16 @@ $$6x^2 - 19x - 7$$
 	$$
 \subsection{Negative Exponent}
 	$$
-	x^-r = \frac{1}{x^r}
+	x^{-r} = \frac{1}{x^r}
 	$$
 \subsection{Zero Exponent}
-	if x \ne 0
+	if $x \ne 0$
 
 	$$x^0 = 1$$
 
 \subsection{Negative Exponent with Quotient}
 	$$
-	\left( \frac{x}{y}\right)^-^r = \left(\frac{x}{y}\right)^r
+	\left( \frac{x}{y}\right)^{-r} = \left(\frac{x}{y}\right)^r
 	$$
 
 \subsection{Fractional}
@@ -140,14 +140,14 @@ $$ 9y^4 - 42wy^2 + 49w^2 $$
 \section{Sets, Set Notation, \& Interval Notation}
 \noindent \textbf{Set}: A collection of objects (called ``elements'', ``members'', or ``points'').
 
-The Empty Set (the set with nothing in it) is denoted with \emptyset. 
+The Empty Set (the set with nothing in it) is denoted with $\emptyset$. 
 \subsection{Set Builder Notation}
 The set of all elements $x$ satisfying property $P$ is denoted as $\{x | P(x)\}$.
 
 $|$ means ``such that'' \\ 
 $\in$ means ``is a member of''\\
 $\notin$ means ``not a member of''\\
-There are no repeated elements in a set. A collection of numbers 1,1,1,4,5 is denoted as $\{1,4,5\}$.
+There are no repeated elements in a set. A collection of numbers 1, 1, 1, 4, 5 is denoted as $\{1,4,5\}$.
 \subsection{Interval Notation}
 A square bracket includes a number, a parenthesis excludes a number.
 
@@ -382,4 +382,53 @@ $$\sum_{i=1}^{4} n^2 = 1^2 + 2^2 + 3^2 + 4^2 = 30$$
 
 We can add up the first four terms of the expression $2n+1$:
 $$\sum_{i=1}^{4} (2n+1) = 3 + 5 + 7 + 9 = 24$$
+
+\section{Function Composition}
+Suppose that you're a farmer, and you plant seeds that turn into corn. You write a function to determine how much corn, $C$, in kilograms, that you'll produce after planting in a given number of acres of land, $a$:
+
+$$C(a) = 7500a - 1500$$
+
+For example, if you plant 2 acres of corn, you'll get 13,500 kilograms: 
+
+$$C(2) = 7500(2) - 1500 = 13,500$$ 
+
+What you \emph{really} want to know, however, is how much money you'll get after selling your corn, so you write another function, $M$: 
+
+$$M(c) = 0.9c - 50$$
+
+If you produce 13,500 kilograms of corn, you can expect to make \$12,100: 
+
+$$M(13,500) = 0.9(13,500) - 50 = \$12,100$$
+
+This is all well and good, but we're efficient farming mathematicians -- we want to create a function that directly converts planted acres to our earnings. To find this function, let's think about the most general question: how much money do we expect to make if we plant on $a$ acres of land? Well, if we plant corn on $a$ acres, we expect to produce $C(a)$ kilograms of corn, and if we produce $C(a)$ kilograms of corn, we expect to make $M(C(a))$ dollars.
+
+So to find a general rule that converts acres of land into the expected earnings, we can find the expression
+$$M(C(a))$$
+
+But how do we do this? Notice that in the expression $M(C(a))$, the input of the function $M$ is $C(a)$. To find this expression, we can substitute $C(a)$ in for $c$ in function $M$: 
+
+$$M(c) = 0.9c - 50$$
+$$M(C(a)) = 0.9(C(a)) - 50$$
+$$0.9(7500a - 1500) - 50$$
+$$6750a - 1350 - 50$$
+$$6750a - 1400$$
+So the function $M(C(a)) = 6750a - 1400$ converts acres planted directly into expected earnings. We can use this function to check how much money you'll earn when planting on 2 acres: 
+
+$$M(C(2)) = 6750(2) - 1400 = \$12,100$$
+We can expect to make \$12,100 from planting on 2 acres of land, which matches up with our previous work. 
+
+We just found what's called a \textbf{composite function}. Instead of substituting acres planted into the corn function, and then substituting the amount of corn produced into the money function, we found a function that takes the acres planted directly to the expected earnings. 
+
+We did this by substituting $C(a)$ into function $M$, or by finding $M(C(a))$. Let's call this new function $M \circ C$, which is read as "M composed with C''. 
+We now know that $(M \circ C)(a) = M(C(a))$, which is the formal definition of function composition. 
+\subsection{Examples}
+Ben is a potato farmer. The function $P(a) = 25,000a - 1,000$ gives the amount of potatoes, $P$, in kilograms, that he expects to produce from planting potatoes on $a$ acres of land. The function $M(p) = 0.2p - 200$ gives the amount of money, $M$, in dollars, that Ben expects to make if he produces $p$ kilograms of potatoes. How much money can Ben expect to make if he sells all the potatoes produced on 3 acres? 
+
+$$M(P(a)) = 0.2(P(a)) - 200$$
+$$M(P(a)) = 0.2(25,000a - 1,000) - 200$$
+$$M(P(a)) = 5000a - 200 - 200$$
+$$M(P(a)) = 5000a - 400$$
+Having created our composite function, we can now answer the question: 
+$$M(P(3)) = 5,000(3) - 400 = 14,600$$
+Ben can expect to make \$14,600 if he sells all the potatoes produced on 3 acres of land.
 \end{document}
